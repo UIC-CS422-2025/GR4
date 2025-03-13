@@ -14,22 +14,27 @@ h1, .dietary-selection button {
     color: rgb(21, 168, 21);
 }
 
+h1 {
+    font-size: 6vh;
+}
+
 h2 {
     font-weight: lighter;
+    font-size: 4vh;
 }
 
 .dietary-selection {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     flex-direction: column;
 }
 
 .dietary-selection button {
-    padding: 2vh 2vw 2vh 2vw;
+    padding: 2.5vh 7vw 2.5vh 7vw;
     font-weight: bold;
     border: none;
     background-color: rgb(218, 218, 218);
     border-radius: 10px;
-    font-size: large;
+    font-size: 3.5vh;
     cursor: pointer;
 }
