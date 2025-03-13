@@ -1,0 +1,35 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+h1, .dietary-selection button {
+    color: rgb(21, 168, 21);
+}
+
+h2 {
+    font-weight: lighter;
+}
+
+.dietary-selection {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.dietary-selection button {
+    padding: 2vh 2vw 2vh 2vw;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(218, 218, 218);
+    border-radius: 10px;
+    font-size: large;
+    cursor: pointer;
+}
