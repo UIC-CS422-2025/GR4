@@ -10,7 +10,7 @@ const startScanner = () => {
       },
     },
     decoder: {
-      readers: ["ean_reader"], // only EAN-13 barcodes
+      readers: ["ean_reader", "upc_reader"], // only EAN and UPC barcode types
     },
   };
 
