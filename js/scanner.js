@@ -27,20 +27,27 @@ const startScanner = () => {
 
     Quagga.stop();
 
+    document.body.innerHTML = "<img src='../images/loading.gif' />";
+
     try {
       const response = await fetch(`https://06062022.xyz/barcode/${barcode}`);
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || data["product_name"] == "N/A") {
         throw new Error("Product not found");
       }
 
       localStorage.setItem("productData", JSON.stringify(data));
-
       window.location.href = "../pages/product.html";
     } catch (error) {
       console.error("Error fetching product info:", error);
-      alert("Product not found");
+      alert(error);
+      Quagga.init(quaggaConf, (err) => {
+        if (err) {
+          return console.log(err);
+        }
+        Quagga.start();
+      });
     }
   });
 };

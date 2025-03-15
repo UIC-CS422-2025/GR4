@@ -42,6 +42,8 @@ html {
 
 #interactive {
   position: absolute;
+  aspect-ratio: 1/1;
+  width: 100%;
 }
 
 .scanner-overlay {
