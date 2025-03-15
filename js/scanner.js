@@ -27,6 +27,7 @@ const startScanner = () => {
 
     Quagga.stop();
 
+    const prevHTML = document.body.innerHTML;
     document.body.innerHTML = "<img src='../images/loading.gif' />";
 
     try {
@@ -41,6 +42,7 @@ const startScanner = () => {
       window.location.href = "../pages/product.html";
     } catch (error) {
       console.error("Error fetching product info:", error);
+      document.body.innerHTML = prevHTML;
       alert(error);
       Quagga.init(quaggaConf, (err) => {
         if (err) {
