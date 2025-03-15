@@ -7,10 +7,50 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
-    <h1 id="product-name"></h1>
-    <div id="image-container"></div>
+    <div class="header">
+      <i
+        class="fa-solid fa-camera fa-3x"
+        id="camera"
+        onclick="location.href = '../pages/scanner.html'"
+      ></i>
+      <i
+        class="fa-solid fa-gear fa-3x"
+        id="settings"
+        onclick="location.href = '../index.html'"
+      ></i>
+    </div>
+    <div class="content">
+      <div id="product-images">
+        <img src="../images/placeholder.png" id="product-img" />
+        <span class="fa-stack fa-indicator fa-3x">
+          <i class="fa-solid fa-circle fa-stack-1x" style="color: white"></i>
+          <i
+            class="fa-solid fa-triangle-exclamation fa-stack-2x"
+            id="indicator"
+          ></i
+        ></span>
+      </div>
+      <div id="info">
+        <h1 id="product-name">Skibidi</h1>
+        <h3 id="description">
+          This product is highly processed and contains artificial additives.<br /><br />Aspartame<br />High-fructose
+          corn syrup
+        </h3>
+        <button
+          id="alternatives"
+          onclick="location.href='./alternatives.html'"
+          class="visible"
+        >
+          Alternatives
+        </button>
+      </div>
+    </div>
     <script src="../js/product.js"></script>
   </body>
 </html>
