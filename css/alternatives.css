@@ -20,12 +20,19 @@ h1 {
 }
 
 .option {
+  position: relative;
   display: flex;
   gap: 2vh;
   font-size: large;
   border: solid 1px;
   padding: 1vh;
   cursor: pointer;
+}
+
+.option i {
+  position: absolute;
+  right: 5%;
+  top: 40%;
 }
 
 .option img {
