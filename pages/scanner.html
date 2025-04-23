@@ -23,8 +23,8 @@
     </div>
     <div class="content">
       <i class="fa-solid fa-camera fa-8x" id="camera"></i>
-      <h2>Place Bar-code in Frame</h2>
-      <div class="scanning-frame">
+      <div class="scanner-frame">
+        <h2 class="scanner-label">Place Bar-code in Frame</h2>
         <div class="scanner-overlay">
           <div id="interactive" class="viewport"></div>
           <div class="corner tl"></div>
@@ -33,6 +33,17 @@
           <div class="corner br"></div>
           <div class="scan-line"></div>
         </div>
+        <form class="barcode-form">
+          <input
+            type="text"
+            inputmode="numeric"
+            pattern="\d*"
+            placeholder="Enter barcode manually"
+            class="barcode-input"
+            required
+          />
+          <button type="submit" class="barcode-submit">Submit</button>
+        </form>
       </div>
     </div>
     <script src="../js/scanner.js"></script>
