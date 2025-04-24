@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   name.textContent = `Alternative #${alternative[1]}`;
   img.src = img_src;
-  aisle.textContent = `Can be found in Aisle ${Math.floor(
-    Math.random() * 500
-  )}`;
+  aisle.textContent = `Can be found in Aisle ${
+    Math.floor(
+      Math.random() * 500,
+    )
+  }`;
 });

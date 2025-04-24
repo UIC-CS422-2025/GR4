@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "gr4",
+  "version": "1.0.0",
+  "description": "The first computer-based implementation of group 8's term project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

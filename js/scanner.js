@@ -76,6 +76,14 @@ const startScanner = () => {
   });
 };
 
+window.addEventListener("pageshow", () => {
+  // Always show dietary preference
+  const header = document.querySelector(".header");
+  header.querySelector("h1").textContent = `Preference: ${
+    localStorage.getItem("preference")
+  }`;
+});
+
 document.addEventListener("DOMContentLoaded", async () => {
   startScanner();
 
@@ -83,12 +91,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (form) {
     form.addEventListener("submit", handleBarcodeSubmit);
   }
-
-  // Always show dietary preference
-  const header = document.querySelector(".header");
-  header.querySelector("h1").textContent = `Preference: ${
-    localStorage.getItem("preference")
-  }`;
 
   const cameraPerms = await navigator.permissions.query({ name: "camera" });
   const scannerLabel = document.querySelector(".scanner-label");
@@ -101,6 +103,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   cameraPerms.addEventListener("change", () => {
     if (cameraPerms.state === "granted") {
       scannerLabel.textContent = scannerLabelOriginalText;
+    } else {
+      scannerLabel.textContent = "Please grant camera permissions";
     }
   });
+
+  const scannerSuggestions = [
+    scannerLabelOriginalText,
+    "Please move phone closer to Bar-code",
+    "Please move phone farther from Bar-code",
+    "Please tilt the phone to the left",
+    "Please tilt the phone to the right",
+  ];
+
+  setInterval(() => {
+    scannerLabel.textContent =
+      scannerSuggestions[Math.floor(Math.random() * scannerSuggestions.length)];
+  }, 5000);
 });
