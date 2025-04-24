@@ -31,6 +31,10 @@ const fetchBarcode = async (barcode) => {
     }
 
     localStorage.setItem("productData", JSON.stringify(data));
+    const history = JSON.parse(localStorage.getItem("scanHistory")) || [];
+    history.unshift({ barcode, product_name: data.product_name });
+    localStorage.setItem("scanHistory", JSON.stringify(history));
+
     window.location.href = "../pages/product.html";
   } catch (error) {
     console.error("Error fetching product info:", error);
@@ -79,9 +83,9 @@ const startScanner = () => {
 window.addEventListener("pageshow", () => {
   // Always show dietary preference
   const header = document.querySelector(".header");
-  header.querySelector("h1").textContent = `Preference: ${
-    localStorage.getItem("preference")
-  }`;
+  header.querySelector("h1").textContent = `Preference: ${localStorage.getItem(
+    "preference"
+  )}`;
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
