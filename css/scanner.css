@@ -17,6 +17,7 @@ video {
   align-items: center;
   justify-content: flex-end;
   padding: 3vh;
+  gap: 1rem;
 }
 
 #settings {

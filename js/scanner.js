@@ -76,11 +76,31 @@ const startScanner = () => {
   });
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   startScanner();
 
   const form = document.querySelector(".barcode-form");
   if (form) {
     form.addEventListener("submit", handleBarcodeSubmit);
   }
+
+  // Always show dietary preference
+  const header = document.querySelector(".header");
+  header.querySelector("h1").textContent = `Preference: ${
+    localStorage.getItem("preference")
+  }`;
+
+  const cameraPerms = await navigator.permissions.query({ name: "camera" });
+  const scannerLabel = document.querySelector(".scanner-label");
+  const scannerLabelOriginalText = scannerLabel.textContent;
+
+  if (cameraPerms.state !== "granted") {
+    scannerLabel.textContent = "Please grant camera permissions";
+  }
+
+  cameraPerms.addEventListener("change", () => {
+    if (cameraPerms.state === "granted") {
+      scannerLabel.textContent = scannerLabelOriginalText;
+    }
+  });
 });
