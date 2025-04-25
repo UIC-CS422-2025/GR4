@@ -37,15 +37,7 @@ const fetchBarcode = async (barcode) => {
 
     window.location.href = "../pages/product.html";
   } catch (error) {
-    console.error("Error fetching product info:", error);
-    document.body.innerHTML = prevHTML;
-    alert(error);
-    Quagga.init(quaggaConf, (err) => {
-      if (err) {
-        return console.log(err);
-      }
-      Quagga.start();
-    });
+    location.href = "../pages/error.html";
   }
 };
 
