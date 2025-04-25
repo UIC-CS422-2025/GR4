@@ -28,7 +28,6 @@ const fetchFromHistory = async (barcode) => {
     localStorage.setItem("productData", JSON.stringify(data));
     window.location.href = "../pages/product.html";
   } catch (error) {
-    alert("Failed to fetch product: " + error.message);
-    window.location.reload();
+    location.href = "../pages/error.html";
   }
 };
