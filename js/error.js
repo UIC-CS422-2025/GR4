@@ -25,5 +25,5 @@ continue_btn.addEventListener("click", () => {
         report_btn.style.backgroundColor = "rgb(159, 223, 255)";
     }
 
-    location.href = "../pages/scanner.html";
+    history.back();
 });

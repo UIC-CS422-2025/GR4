@@ -13,13 +13,29 @@
     />
   </head>
   <body>
-    <h2 style="color:red; font-size: 4vh;">Product not Found</h2>
-    <h3 style="text-align: center;">Report the Product <br/> to Our System</h3>
+    <div class="header">
+      <i
+        class="fa-solid fa-clock-rotate-left fa-3x"
+        id="history"
+        onclick="location.href = './history.html'"
+        title="Scan History"
+        style="margin-right: 20px; cursor: pointer"
+      ></i>
+      <i
+        class="fa-solid fa-gear fa-3x"
+        id="settings"
+        onclick="location.href = './settings.html'"
+      ></i>
+    </div>
+    <div class="content">
+      <h2 style="color:red; font-size: 4vh;">Product not Found</h2>
+      <h3 style="text-align: center;">Report the Product <br/> to Our System</h3>
 
-    <div class="controls">
-      <button id="report-btn">Report</button>
-      <button id="continue-btn">Continue</button>
+      <div class="controls">
+        <button id="report-btn">Report</button>
+        <button id="continue-btn">Back</button>
 
+      </div>
     </div>
     <script src="../js/error.js"></script>
   </body>
