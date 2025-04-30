@@ -31,8 +31,17 @@ const fetchBarcode = async (barcode) => {
     }
 
     localStorage.setItem("productData", JSON.stringify(data));
+
     const history = JSON.parse(localStorage.getItem("scanHistory")) || [];
-    history.unshift({ barcode, product_name: data.product_name });
+    const timestamp = new Date().toLocaleString();
+
+    history.unshift({
+      barcode,
+      product_name: data.product_name,
+      image_urls: data.image_urls || "../images/placeholder.png",
+      timestamp,
+    });
+
     localStorage.setItem("scanHistory", JSON.stringify(history));
 
     window.location.href = "../pages/product.html";

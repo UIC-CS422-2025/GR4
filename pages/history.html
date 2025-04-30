@@ -6,31 +6,40 @@
     <title>Scan History</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/history.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
   <body>
-    <div class="header">
+    <div class="w-full flex justify-between items-center p-4 border-b">
       <i
-        class="fa-solid fa-camera fa-3x"
+        class="fa-solid fa-camera text-2xl text-gray-600 cursor-pointer hover:text-black"
         id="scanner"
         onclick="location.href = './scanner.html'"
         title="Back to Scanner"
-        style="margin-right: 20px; cursor: pointer"
       ></i>
-      <h1 class="preference-label">Scan History</h1>
+
+      <h1 class="preference-label text-lg font-semibold text-center">
+        Scan History
+      </h1>
+
       <i
-        class="fa-solid fa-gear fa-3x"
+        class="fa-solid fa-gear text-2xl text-gray-600 cursor-pointer hover:text-black"
         id="settings"
         onclick="location.href = './settings.html'"
+        title="Settings"
       ></i>
     </div>
 
-    <div class="content">
-      <h2>Previously Scanned Products</h2>
-      <ul class="history-list"></ul>
+    <div class="content px-6 py-8">
+      <ul class="history-list space-y-4 z-99"></ul>
+      <div id="no-history" class="text-center text-gray-400 mt-20">
+        <i class="fa-solid fa-clock-rotate-left text-4xl mb-4"></i>
+        <p class="text-base font-medium">No Scan History</p>
+        <p class="text-sm">Your scan history will appear here</p>
+      </div>
     </div>
     <script src="../js/history.js"></script>
   </body>
