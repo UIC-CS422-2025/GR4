@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let vegan_btn = document.getElementById("vegan-btn");
 
   veget_btn.addEventListener("click", () => {
-    localStorage.setItem("preference", "Vegeterian");
+    localStorage.setItem("preference", "Vegetarian");
     location.href = "./pages/scanner.html";
   });
 
