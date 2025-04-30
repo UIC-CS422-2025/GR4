@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const popup = document.querySelector(".popup");
-  const close_popup_btn = document.querySelector(".popup > .close-btn");
+  const close_popup_btn = document.querySelectorAll(".close-btn");
 
-  close_popup_btn.addEventListener("click", () => {
-    localStorage.setItem("hide-popup", true);
-    popup.style.display = "none";
-  });
+  for (const btn of close_popup_btn) {
+    btn.addEventListener("click", () => {
+      localStorage.setItem("hide-popup", true);
+      popup.style.display = "none";
+    });
+  }
 
   // Show or hide popup
   if (!localStorage.getItem("hide-popup")) {
