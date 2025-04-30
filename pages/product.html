@@ -6,59 +6,92 @@
     <title>Scan Results</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/product.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
   <body>
-    <div class="header">
+    <div class="w-full flex justify-between items-center p-4 border-b">
       <i
-        class="fa-solid fa-camera fa-3x"
+        class="fa-solid fa-camera text-2xl text-gray-600 cursor-pointer hover:text-black"
         id="camera"
         onclick="location.href = '../pages/scanner.html'"
       ></i>
-      <h1 class="preference-label"></h1>
-      <i
-        class="fa-solid fa-clock-rotate-left fa-3x"
-        id="history"
-        onclick="location.href = './history.html'"
-        title="Scan History"
-        style="margin-right: 20px; cursor: pointer"
-      ></i>
-      <i
-        class="fa-solid fa-gear fa-3x"
-        id="settings"
-        onclick="location.href = './settings.html'"
-      ></i>
-    </div>
-    <div class="content">
-      <div id="product-images">
-        <img src="../images/placeholder.png" id="product-img" />
-        <span class="fa-stack fa-indicator fa-3x">
-          <i class="fa-solid fa-circle fa-stack-1x" style="color: white"></i>
-          <i
-            class="fa-solid fa-triangle-exclamation fa-stack-2x"
-            id="indicator"
-          ></i
-        ></span>
+
+      <h1
+        class="preference-label text-green-600 font-semibold text-lg text-center"
+      >
+        Preference:
+        <span id="currentPreference" class="text-black">Vegetarian</span>
+      </h1>
+
+      <div class="flex items-center gap-4">
+        <i
+          class="fa-solid fa-clock-rotate-left text-2xl text-gray-600 cursor-pointer hover:text-black"
+          id="history"
+          onclick="location.href = './history.html'"
+          title="Scan History"
+        ></i>
+        <i
+          class="fa-solid fa-gear text-2xl text-gray-600 cursor-pointer hover:text-black"
+          id="settings"
+          onclick="location.href = './settings.html'"
+        ></i>
       </div>
-      <div id="info">
-        <h1 id="product-name">Skibidi</h1>
-        <h3 id="description">
-          This product is highly processed and contains artificial additives.<br />
-          <br />Aspartame<br />High-fructose corn syrup
-        </h3>
-        <button
-          id="alternatives"
-          onclick="location.href='./alternatives.html'"
-          class="visible"
+    </div>
+    <div class="content flex flex-col items-center p-6 flex-grow">
+      <div id="product-images" class="relative mb-4">
+        <img
+          src="../images/placeholder.png"
+          id="product-img"
+          alt="Product"
+          class="w-48 h-full rounded bg-gray-100 object-cover"
+        />
+        <span
+          class="fa-stack fa-indicator absolute -bottom-2 left -translate-x-2"
         >
-          Alternatives
-        </button>
+          <i
+            class="fa-solid fa-circle fa-stack-1x text-white text-3xl"
+            id="indicator-bg"
+          ></i>
+          <i
+            class="fa-solid fa-circle-xmark fa-stack-2x text-red-500 text-2xl"
+            id="indicator-icon"
+          ></i>
+        </span>
       </div>
+
+      <h1 id="product-name" class="text-xl font-bold mb-3 text-center">
+        Skibidi
+      </h1>
+
+      <div
+        id="status-msg"
+        class="bg-red-100 text-red-700 px-4 py-1 text-sm rounded-full mb-4"
+      >
+        Contains non-vegetarian ingredients
+      </div>
+
+      <div
+        class="bg-gray-100 rounded-lg shadow-sm p-4 text-sm w-full max-w-md mb-6"
+      >
+        <p class="font-semibold mb-2">Ingredients:</p>
+        <ul class="space-y-1 text-sm" id="description">
+          <!-- filled by jS -->
+        </ul>
+      </div>
+
+      <button
+        id="alternatives"
+        onclick="location.href='./alternatives.html'"
+        class="visible bg-green-600 text-white font-semibold px-6 py-2 rounded hover:bg-green-700 transition"
+      >
+        Show Vegetarian Alternatives
+      </button>
     </div>
+
     <script src="../js/product.js"></script>
   </body>
 </html>

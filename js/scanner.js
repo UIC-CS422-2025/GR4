@@ -83,10 +83,9 @@ const startScanner = () => {
 
 window.addEventListener("pageshow", () => {
   // Always show dietary preference
-  const header = document.querySelector(".header");
-  header.querySelector("h1").textContent = `Preference: ${localStorage.getItem(
-    "preference"
-  )}`;
+  document.querySelector(
+    "#currentPreference"
+  ).textContent = `${localStorage.getItem("preference")}`;
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
