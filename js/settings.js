@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let text = document.getElementById("preference");
-  text.textContent = "I am a " + localStorage.getItem("preference");
+  const radios = document.querySelectorAll('input[name="diet"]');
 
-  let veget_btn = document.getElementById("vegetarian-btn");
-  let vegan_btn = document.getElementById("vegan-btn");
+  const currentPref = localStorage.getItem("preference");
+  radios.forEach((radio) => {
+    if (radio.nextElementSibling.textContent === currentPref) {
+      radio.checked = true;
+    }
 
-  veget_btn.addEventListener("click", () => {
-    localStorage.setItem("preference", "Vegeterian");
-    history.back();
-  });
-
-  vegan_btn.addEventListener("click", () => {
-    localStorage.setItem("preference", "Vegan");
-    history.back();
+    radio.addEventListener("change", () => {
+      const newPref = radio.nextElementSibling.textContent;
+      localStorage.setItem("preference", newPref);
+    });
   });
 });

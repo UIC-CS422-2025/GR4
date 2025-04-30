@@ -6,14 +6,56 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
   </head>
   <body>
-    <h2 id="preference"></h2>
-    <h3>Change your preference:</h3>
-    <div class="dietary-selection">
-      <button id="vegetarian-btn">Vegetarian</button>
-      <button id="vegan-btn">Vegan</button>
+    <body class="bg-white text-gray-800 font-sans min-h-screen">
+    <div class="w-full flex items-center p-4 border-b">
+      <i
+        class="fa-solid fa-arrow-left text-2xl text-gray-600 cursor-pointer hover:text-black"
+        onclick="history.back()"
+      ></i>
+      <h1 class="text-lg font-semibold text-center flex-grow -ml-6">
+        Settings
+      </h1>
+    </div>
+
+    <div class="p-6 space-y-8 max-w-xl mx-auto">
+      <div>
+        <h2 class="text-md font-semibold mb-4">Dietary Preference</h2>
+        <div class="flex flex-col gap-3">
+          <label class="flex items-center gap-2">
+            <input
+              type="radio"
+              name="diet"
+              id="vegetarian-btn"
+              class="accent-green-600"
+            />
+            <span>Vegetarian</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input
+              type="radio"
+              name="diet"
+              id="vegan-btn"
+              class="accent-green-600"
+            />
+            <span>Vegan</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-md font-semibold mb-2">About</h2>
+        <div class="bg-gray-50 border rounded p-4 text-sm">
+          <p class="font-semibold mb-1">VeggieVibe v1.0.0</p>
+          <p>A simple app to help you find vegetarian and vegan-friendly products.</p>
+        </div>
+      </div>
     </div>
     <script src="../js/settings.js"></script>
   </body>
