@@ -6,41 +6,82 @@
     <title>Alternatives</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/alternatives.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
   <body>
-    <div class="header">
+    <div class="header w-full flex justify-between items-center p-4 border-b">
       <i
-        class="fa-solid fa-arrow-left"
+        class="fa-solid fa-arrow-left text-2xl text-gray-600 cursor-pointer hover:text-black"
         id="back-button"
-        onclick="history.back()"
+        onclick="location.href = '../pages/product.html'"
       ></i>
-      <h1 class="preference-label"></h1>
+
+      <h1
+        class="preference-label text-green-600 font-semibold text-lg text-center"
+      >
+        Preference:
+        <span id="currentPreference" class="text-black">Vegetarian</span>
+      </h1>
+
       <i
-        class="fa-solid fa-gear fa-3x"
+        class="fa-solid fa-gear text-2xl text-gray-600 cursor-pointer hover:text-black"
         id="settings"
         onclick="location.href = './settings.html'"
+        title="Settings"
       ></i>
     </div>
-    <h1>Alternatives</h1>
-    <div class="option">
-      <img src="../images/alternative1.png" />
-      <p>Alternative #1</p>
-      <i class="fa-solid fa-circle-info"></i>
-    </div>
-    <div class="option">
-      <img src="../images/alternative2.png" />
-      <p>Alternative #2</p>
-      <i class="fa-solid fa-circle-info"></i>
-    </div>
-    <div class="option">
-      <img src="../images/alternative3.png" />
-      <p>Alternative #3</p>
-      <i class="fa-solid fa-circle-info"></i>
+
+    <h1 class="text-xl font-bold px-6 mt-4 mb-2">Alternatives</h1>
+
+    <div class="flex flex-col divide-y border-t">
+      <div class="flex items-center justify-between p-4 gap-4 option">
+        <img
+          src="../images/alternative1.png"
+          alt="Vegan Delight"
+          class="w-12 h-12 rounded bg-gray-100 object-cover"
+        />
+        <div class="flex-grow">
+          <p class="font-medium">Leafy Delight</p>
+          <p class="text-sm text-gray-500">Found in Aisle 438</p>
+        </div>
+        <i
+          class="fa-solid fa-circle-info text-gray-400 text-lg cursor-pointer"
+        ></i>
+      </div>
+
+      <div class="flex items-center justify-between p-4 gap-4 option">
+        <img
+          src="../images/alternative2.png"
+          alt="Plant Power"
+          class="w-12 h-12 rounded bg-gray-100 object-cover"
+        />
+        <div class="flex-grow">
+          <p class="font-medium">Plant Power</p>
+          <p class="text-sm text-gray-500">Found in Aisle 999</p>
+        </div>
+        <i
+          class="fa-solid fa-circle-info text-gray-400 text-lg cursor-pointer"
+        ></i>
+      </div>
+
+      <div class="flex items-center justify-between p-4 gap-4 option">
+        <img
+          src="../images/alternative3.png"
+          alt="Green Goodness"
+          class="w-12 h-12 rounded bg-gray-100 object-cover"
+        />
+        <div class="flex-grow">
+          <p class="font-medium">Green Goodness</p>
+          <p class="text-sm text-gray-500">Found in Aisle 1</p>
+        </div>
+        <i
+          class="fa-solid fa-circle-info text-gray-400 text-lg cursor-pointer"
+        ></i>
+      </div>
     </div>
     <script src="../js/alternatives.js"></script>
   </body>

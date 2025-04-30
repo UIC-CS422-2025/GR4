@@ -6,27 +6,60 @@
     <title>Alternative Info</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../css/alternative-info.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
   </head>
   <body>
-    <div class="header">
-      <i
-        class="fa-solid fa-arrow-left fa-3x"
-        id="back"
+    <div class="w-full flex items-center p-4">
+      <button
+        class="p-3 -ml-2 rounded-full hover:bg-gray-100"
         onclick="location.href = '../pages/alternatives.html'"
-      ></i>
+        aria-label="Go back"
+      >
+        <i class="fa-solid fa-arrow-left text-2xl text-gray-600"></i>
+      </button>
     </div>
-    <h1 id="alternative-name">Alternative hehe</h1>
-    <img id="alternative-img" src="" />
-    <h1 id="aisle">Can be found in Aisle 1</h1>
-    <h3>This item is high in protein and contains sufficient nutrients.</h3>
-    <h3>
-      Protein: 20g<br />Vitamin D<br />Vitamin C
-    </h3>
+    <div class="flex flex-col items-center px-6 text-center gap-4">
+      <img
+        id="alternative-img"
+        src="../images/placeholder.png"
+        alt="Alternative Image"
+        class="w-48 h-full rounded bg-gray-100 object-cover"
+      />
+
+      <h1 id="alternative-name" class="text-xl font-bold">Alternative Hehe</h1>
+
+      <div
+        class="bg-green-100 text-green-700 text-sm px-3 py-1 rounded-full font-medium"
+        id="status-msg"
+      >
+        Vegetarian Friendly
+      </div>
+
+      <div class="bg-gray-50 w-full max-w-xs p-4 rounded text-sm text-center">
+        <p class="text-gray-500">Can be found in</p>
+        <p id="aisle" class="text-green-600 font-semibold text-base">Aisle 1</p>
+      </div>
+
+      <div class="bg-gray-50 w-full max-w-xs p-4 rounded text-sm text-left">
+        <p class="font-semibold mb-2">Nutritional Information:</p>
+        <div class="flex justify-between">
+          <span>Protein:</span> <span>18g</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Vitamin B12:</span> <span>&#10003;</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Vitamin D:</span> <span>&#10003;</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Iron:</span> <span>&#10003;</span>
+        </div>
+      </div>
+    </div>
     <script src="../js/alternative-info.js"></script>
   </body>
 </html>
